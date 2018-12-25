@@ -8,19 +8,41 @@
 
 import SpriteKit
 import GameplayKit
+import AVFoundation
 
-class GameScene: SKScene {
-    
-    var suuji: Int = 1 {
-        didSet {
-            bingoNumber.text = "Bingo Number: \(suuji)"
-        }
-    }
-    
+class GameScene: SKScene, AVAudioPlayerDelegate {
     
     var button:SKSpriteNode!
     
     var bingoNumber: SKLabelNode!
+    
+    //音
+    var audioPlayer: AVAudioPlayer!
+    func playSound(name: String) {
+        guard let path = Bundle.main.path(forResource: name, ofType: "mp3") else {
+            print("pikopiko")
+            return
+        }
+        
+        do {
+            // AVAudioPlayerのインスタンス化
+            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+            
+            // AVAudioPlayerのデリゲートをセット
+            audioPlayer.delegate = self
+            
+            // 音声の再生
+            audioPlayer.play()
+        } catch {
+        }
+    }
+    
+    
+    var suuji: Int = 1 {
+        didSet {
+            self.bingoNumber.text = "\(suuji)"
+        }
+    }
     
     override func didMove(to view: SKView) {
         
@@ -33,14 +55,15 @@ class GameScene: SKScene {
         self.button.zPosition = 0
         addChild(self.button)
         
-        bingoNumber = SKLabelNode(text: "0")
-        bingoNumber.fontName = "Papyrus"
-        bingoNumber.fontSize = 100
-        bingoNumber.position = CGPoint(x: frame.midX, y: frame.midY)
-        addChild(bingoNumber)
+        self.bingoNumber = SKLabelNode(text: "0")
+        self.bingoNumber.fontName = "Papyrus"
+        self.bingoNumber.fontSize = 150
+        self.bingoNumber.position = CGPoint(x: frame.midX, y: frame.midY)
+        addChild(self.bingoNumber)
         
         
     }
+    
     
     func arc4random(lower: UInt32, upper: UInt32) -> UInt32 {
         guard upper >= lower else {
@@ -68,21 +91,21 @@ class GameScene: SKScene {
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch: AnyObject in touches {
-            let location = touch.location(in: self)
-            let touchNode = self.atPoint(location)
-            //ugokiの変数を0にする
-            if touchNode == button {
-                Number =
-                for _ in 1 ... 75 {
-                    print(arc4random(lower: 10, upper: 15))
-                }
-            }
-        }
+        
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+        for touch: AnyObject in touches {
+            let location = touch.location(in: self)
+            let touchNode = self.atPoint(location)
+            
+            if touchNode == self.button {
+                playSound(name: "pikopiko")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.suuji = Int(self.arc4random(lower: 1, upper: 75))
+                }
+            }
+        }
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {

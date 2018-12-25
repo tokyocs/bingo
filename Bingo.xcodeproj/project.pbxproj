@@ -17,6 +17,7 @@
 		FE0773C921D20AEC0047A50E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE0773C721D20AEC0047A50E /* LaunchScreen.storyboard */; };
 		FE0773D421D20AEC0047A50E /* BingoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0773D321D20AEC0047A50E /* BingoTests.swift */; };
 		FE0773DF21D20AED0047A50E /* BingoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0773DE21D20AED0047A50E /* BingoUITests.swift */; };
+		FEB2594F21D224860083A96D /* pikopiko.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FEB2594E21D224860083A96D /* pikopiko.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		FE0773DA21D20AED0047A50E /* BingoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BingoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE0773DE21D20AED0047A50E /* BingoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BingoUITests.swift; sourceTree = "<group>"; };
 		FE0773E021D20AED0047A50E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEB2594E21D224860083A96D /* pikopiko.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pikopiko.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				FE0773C021D20AEC0047A50E /* GameViewController.swift */,
 				FE0773C221D20AEC0047A50E /* Main.storyboard */,
 				FE0773C521D20AEC0047A50E /* Assets.xcassets */,
+				FEB2594E21D224860083A96D /* pikopiko.mp3 */,
 				FE0773C721D20AEC0047A50E /* LaunchScreen.storyboard */,
 				FE0773CA21D20AEC0047A50E /* Info.plist */,
 			);
@@ -244,6 +247,7 @@
 				FE0773C421D20AEC0047A50E /* Main.storyboard in Resources */,
 				FE0773BB21D20AEC0047A50E /* GameScene.sks in Resources */,
 				FE0773C621D20AEC0047A50E /* Assets.xcassets in Resources */,
+				FEB2594F21D224860083A96D /* pikopiko.mp3 in Resources */,
 				FE0773C921D20AEC0047A50E /* LaunchScreen.storyboard in Resources */,
 				FE0773BD21D20AEC0047A50E /* Actions.sks in Resources */,
 			);
@@ -429,6 +433,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = tcs.Bingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -441,6 +446,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = tcs.Bingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -517,6 +523,7 @@
 				FE0773E521D20AED0047A50E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FE0773E621D20AED0047A50E /* Build configuration list for PBXNativeTarget "BingoTests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +532,7 @@
 				FE0773E821D20AED0047A50E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FE0773E921D20AED0047A50E /* Build configuration list for PBXNativeTarget "BingoUITests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +541,7 @@
 				FE0773EB21D20AED0047A50E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
